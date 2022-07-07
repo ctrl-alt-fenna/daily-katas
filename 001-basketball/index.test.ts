@@ -14,3 +14,12 @@ test("points(0,1) should equal 3", () => {
 test("points(0,0) should equal 0", () => {
     expect(points(0,0)).toBe(0)
 });
+test("points(-1,0) should throw error", () => {
+    expect(() => points(-1,0)).toThrow("Cannot have negative points");
+});
+test("points(0,-1) should throw error", () => {
+    expect(() => points(0,-1)).toThrow("Cannot have negative points");
+});
+test("points(-1,-1) should throw error", () => {
+    expect(() => points(-1,-1)).toThrow("Cannot have negative points");
+});
