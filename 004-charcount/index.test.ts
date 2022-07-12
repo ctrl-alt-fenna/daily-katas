@@ -21,5 +21,5 @@ test('charCount("!", "!easy!") should equal 2', () => {
     expect(charCount("!", "!easy!")).toBe(2);
 })
 test('charCount("wow", "the universe is wow") should throw error', () => {
-    expect(() => charCount("wow", "the universe is wow")).toThrow("Character length too long")
+    expect(() => charCount("wow", "the universe is wow")).toThrow("Character length invalid")
 })
