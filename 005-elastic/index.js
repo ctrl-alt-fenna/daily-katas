@@ -14,12 +14,12 @@ export function elasticize(word) {
 }
 
 function isEven(word) {
-    return (word.length % 2 == 0)
+    return (word.length % 2 === 0)
 }
 
 function usePivot(wordSection, side, centerLocation = 0) {
     let elasticWord = ""
-    if (side == 'l') {
+    if (side === 'l') {
         let letterLocation = 1
         for (var letter of wordSection) {
             for (let i = 0; i < letterLocation; i++) {
@@ -27,7 +27,7 @@ function usePivot(wordSection, side, centerLocation = 0) {
             }
             letterLocation++;
         }
-    } else if (side == 'r') {
+    } else if (side === 'r') {
         let sideLocation = wordSection.length
         let letterLocation = 0
         for (var letter of wordSection) {
