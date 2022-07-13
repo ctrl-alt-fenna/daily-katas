@@ -22,25 +22,15 @@ function usePivot(wordSection, side, centerLocation = 0) {
     if (side === 'l') {
         let letterLocation = 1
         for (var letter of wordSection) {
-            for (let i = 0; i < letterLocation; i++) {
-                elasticWord += wordSection.at(letterLocation - 1);
-            }
+            elasticWord += letter.repeat(letterLocation)
             letterLocation++;
         }
     } else if (side === 'r') {
         let sideLocation = wordSection.length
-        let letterLocation = 0
         for (var letter of wordSection) {
-            for (let x = sideLocation; x > 0; x--) {
-                elasticWord += wordSection.at(letterLocation);
-            }
+            elasticWord += letter.repeat(sideLocation)
             sideLocation--;
-            letterLocation++;
         }
-    } else {
-        for (let x = 0; x < centerLocation; x++) {
-            elasticWord += wordSection
-        }
-    }
+    } else elasticWord += wordSection.repeat(centerLocation)
     return elasticWord
 }
