@@ -9,3 +9,14 @@ Katas are small educational (in my case, programming) challenges. During the Exp
 * [Kata 7: Grant me a hint](https://edabit.com/challenge/AYGCq4YErHLGxjXEs)
 * [Kata 8: Valid IPv4](https://edabit.com/challenge/S5nPFF44x7JceXPBn)
 * [Kata 9: Friday 13ths](https://edabit.com/challenge/JnbkJAxA3woPFHYMm)
+
+# Testing/Usage
+To run testcases:
+```
+npm test [path(optional)]
+```
+If you don't specify a path, it will automatically run all the kata-testcases. 
+The tests are run using jest, so make sure you have installed all the packages:
+```
+npm install
+```
