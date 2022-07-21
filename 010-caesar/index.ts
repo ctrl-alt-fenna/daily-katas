@@ -1,33 +1,32 @@
 export function caesarCipher(text, rotation) {
     const isLower = /[a-z]/
     const isUpper = /[A-Z]/
+    const isLetter = /[a-z]/i
     // Consts to make charcodes more legible
-    const A = 65;
-    const Z = 90
-    const a = 96;
-    const z = 122;
-    let output = ''
+    const A = 65, Z = 90;
+    const a = 96, z = 122;
+    let encyphered = ''
     for (const char of text) {
-        const charCode = char.charCodeAt(char);
-        let rotatedCode = charCode + rotation
-        if (isLower.test(char)) {
-            if (rotatedCode > z) {
-                // Rotate the remainder over the other way
-                let leftOver = rotation - (z - charCode);
-                rotatedCode = a + leftOver;
+        if (!isLetter.test(char)) encyphered += char;
+        else {
+            const charCode = char.charCodeAt(char);
+            let rotatedCode = charCode + rotation
+            if (isLower.test(char)) {
+                if (rotatedCode > z) {
+                    // Rotate the remainder over the other way
+                    let leftOver = rotation - (z - charCode);
+                    rotatedCode = a + leftOver;
+                }
             }
-            output += String.fromCharCode(rotatedCode);
-        }
-        else if (isUpper.test(char)) {
-            if (rotatedCode > Z) {
-                // Rotate the remainder over the other way
-                let leftOver = rotation - (Z - charCode);
-                rotatedCode = A + leftOver
+            else if (isUpper.test(char)) {
+                if (rotatedCode > Z) {
+                    // Rotate the remainder over the other way
+                    let leftOver = rotation - (Z - charCode);
+                    rotatedCode = A + leftOver
+                }
             }
-            output += String.fromCharCode(rotatedCode)
+            encyphered += String.fromCharCode(rotatedCode)
         }
-        // If char is not a letter add it as-is
-        else output += char;
     }
-    return output
+    return encyphered
 }
