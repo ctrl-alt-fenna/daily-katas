@@ -10,6 +10,6 @@ test("correctTitle('sansa stark,lady of winterfell.')", () => {
 test('correctTitle("jOn SnoW, kINg IN thE noRth")', () => {
     expect(correctTitle("jOn SnoW, kINg IN thE noRth")).toBe("Jon Snow, King in the North.")
 });
-test('correctTitle("random-tItLe of WaTERLaND")', () => {
-    expect(correctTitle("random-tItLe of WaTERLaND")).toBe("Random Title of Waterland.")
+test("'Mance Rayder, King-Beyond-the-Wall.', instead got: 'Mance Rayder, King Beyond-the-wall.'", () => {
+    expect(correctTitle("MANCE RAYDER, KING-BEYOND-THE-WALL.")).toBe("Mance Rayder, King-Beyond-the-Wall.")
 });
